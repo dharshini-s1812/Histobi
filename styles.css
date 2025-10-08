@@ -1,0 +1,349 @@
+ body { 
+      font-family: 'DM Sans', sans-serif; 
+      transition: background-color 0.5s, color 0.5s; 
+    }
+    .playfair { font-family: 'Playfair Display', serif; }
+
+    /* Scroll Animations */
+    @keyframes slideUpFade {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-on-scroll { 
+      opacity: 0; 
+      transform: translateY(50px); 
+      transition: all 0.6s ease-out; 
+    }
+    .animate-on-scroll.visible { 
+      animation: slideUpFade 0.6s forwards; 
+    }
+
+    /* Section Styling */
+    section { scroll-margin-top: 100px; }
+    .section-title { 
+      font-size: clamp(1.75rem, 4vw, 2.5rem); 
+      color: #7a3e2e; 
+      font-family: 'Playfair Display', serif; 
+      margin-bottom: 1rem; 
+    }
+
+    /* Card Hover */
+    .era-card {
+      transition: transform 0.4s cubic-bezier(.19,1,.22,1), box-shadow 0.35s ease;
+    }
+    .era-card:hover, .era-card.active {
+      transform: scale(1.05);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+    }
+
+    /* Details inside cards */
+    .era-card .details {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+      transition: opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+    }
+    .era-card.active .details {
+      opacity: 1;
+      transform: translateY(0) scale(1.04);
+    }
+
+    /* Button Hover */
+    button:hover { transition: all 0.3s ease; }
+
+    /* Footer */
+    footer a:hover { text-decoration: underline; }
+
+
+  .radar-btn {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--earthy-gold) 60%, var(--deep-green) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px 8px rgba(153, 116, 74, 0.3);
+    cursor: pointer;
+    animation: ripple 2.5s infinite;
+    transition: transform 0.25s ease-in-out, box-shadow 0.3s;
+  }
+
+  .radar-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px 12px rgba(153, 116, 74, 0.4);
+  }
+
+  .radar-ring {
+    position: absolute;
+    border: 2px solid var(--earthy-gold);
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: pulseRadar 2.5s infinite;
+  }
+
+  .radar-ring.ring1 { width: 80px; height: 80px; }
+  .radar-ring.ring2 { width: 130px; height: 130px; }
+  .radar-ring.ring3 { width: 180px; height: 180px; }
+
+  @keyframes pulseRadar {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.45; }
+  }
+
+  @keyframes ripple {
+    0% { box-shadow: 0 0 0 0 var(--earthy-gold); }
+    80% { box-shadow: 0 0 40px 24px rgba(153, 116, 74, 0.2); }
+    100% { box-shadow: 0 0 0 0 var(--earthy-gold); }
+  }
+
+  .radar-label {
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 6px var(--deep-green);
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+  }
+ 
+ 
+ 
+ .feedback-section {
+  width: 95%;
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s;
+}
+
+.feedback-title {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.feedback-container {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 2px solid var(--accent-color);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(65,74,55,0.08);
+  background: var(--bg-light);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  transition: background 0.3s, color 0.3s;
+  padding-left: 20px;
+}
+
+.feedback-slide {
+  display: inline-flex;
+  animation: scroll-left 25s linear infinite; /* Keeps animation on all screens */
+  gap: 20px;
+}
+
+.feedback-card {
+  background: var(--card-light);
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(153,116,74,0.15);
+  min-width: 250px;
+  white-space: normal;
+  color: var(--text-light);
+  font-style: italic;
+  user-select: none;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, background 0.3s, color 0.3s;
+}
+
+.feedback-card.new-feedback {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+}
+
+.feedback-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(153,116,74,0.2);
+}
+
+.feedback-stars {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #f5c518;
+}
+
+.feedback-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-form input[type="text"],
+.feedback-form select {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: 2px solid var(--accent-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+  background: var(--card-light);
+  color: var(--text-light);
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form select:focus {
+  border-color: var(--text-light);
+}
+
+.feedback-form button {
+  background: var(--accent-color);
+  color: var(--bg-light);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.feedback-form button:hover {
+  background: var(--text-light);
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Dark theme adjustments */
+
+body.dark .feedback-container {
+  background: var(--bg-dark);
+}
+
+body.dark .feedback-card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+}
+
+body.dark .feedback-form input[type="text"],
+body.dark .feedback-form select {
+  background: var(--card-dark);
+  color: var(--text-dark);
+}
+
+/* RESPONSIVE: Keep animation active on small screens */
+
+@media (max-width: 600px) {
+  .feedback-section {
+    margin: 20px auto;
+  }
+
+  .feedback-title {
+    font-size: 1.4rem;
+  }
+
+  /* Keep horizontal flex and animate */
+
+  .feedback-slide {
+    flex-direction: row; /* Ensure horizontal layout */
+    animation: scroll-left 25s linear infinite; /* Animate on small screens too */
+    overflow: hidden; /* Keep overflow hidden to hide extra content */
+    overflow-y: hidden; /* Ensure no vertical scroll */
+    padding: 0 10px; /* Slight padding for aesthetics */
+  }
+
+  .feedback-card {
+    min-width: 250px;
+    max-width: 90%;
+    margin: 0 10px;
+  }
+
+  /* Make form elements full width on small screens */
+
+  .feedback-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .feedback-form input[type="text"],
+  .feedback-form select,
+  .feedback-form button {
+    width: 100%;
+  }
+}
+
+
+  /* Polished Nearby Cards */
+  #places .place-card {
+    background: #f3e6d9; /* match era cards */
+
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 6px 24px rgba(65,74,55,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #places .place-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 36px rgba(0,0,0,0.25);
+  }
+  #places .place-title {
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.25rem;
+  }
+  #places .place-desc {
+    font-size: 0.9rem;
+    color: #6b645f;
+  }
+
+  .place-snippet {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;      /* exactly 5 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4em;         /* adjust according to font */
+  min-height: 7em;            /* 5 lines × 1.4em line-height */
+}
+
+
+
+
+#suggestions-dropdown {
+  background-color: white;      /* solid visible background */
+  color: black;                 /* readable text color */
+  padding: 0.5rem;              /* some padding */
+  border: 1px solid #ccc;       /* border for visibility */
+  max-height: 240px;            /* max height with scroll */
+  overflow-y: auto;             /* scrollbar if needed */
+  z-index: 1000;                /* ensure it is on top */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+}
+.suggestion-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: black;                 /* ensure dark text */
+}
+.suggestion-item:hover,
+.suggestion-item:focus {
+  background-color: #7a3e2e;   /* highlight color on hover */
+  color: white;                /* white text on highlight */
+}
+
+
+
+
+
+  

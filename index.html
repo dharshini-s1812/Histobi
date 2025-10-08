@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histobi — Time Travel Through India's Heritage</title>
+  
+  <!--Font-->
+   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <script src="script.js"></script>
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Gk15IrD18r40gQPsi_vMd";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+</head>
+<script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+
+<body class="bg-[#fbf8f4] dark:bg-gray-900 text-[#1d1b19] dark:text-gray-200 min-h-screen flex flex-col">
+
+  <div id="app" class="flex flex-col min-h-screen">
+
+<!--nav bar--->
+<header class="w-full bg-gradient-to-b from-white dark:from-gray-800 to-transparent border-b border-[#efe8df] dark:border-gray-700 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+  <!--title -->
+  <div class="flex items-center gap-4">
+    <img src="ttguide.png" alt="Histobi Logo" class="w-12 h-12 object-cover rounded-full shadow-md">
+    <div>
+      <h1 class="playfair font-bold text-xl md:text-2xl text-[#7a3e2e] dark:text-orange-200 tracking-wide">Histobi</h1>
+      <p class="text-sm text-[#6b645f] dark:text-gray-400">Time Travel Through India's Heritage</p>
+    </div>
+  </div>
+
+  <!--nav-->
+  <nav class="hidden md:flex gap-5 items-center text-[#1d1b19] dark:text-gray-200 font-medium">
+    <a href="#hero" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Home</a>
+
+    <a href="#guidelinesSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Guidelines</a>
+    <a href="#nearbySection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Nearby</a>
+     <a href="#expSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Explore</a>
+    <a href="#aboutSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">About</a>
+    <a href="chatbot.html" class="text-[#0f766e] dark:text-cyan-400 hover:underline transition">Chat</a>
+  </nav>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" class="ml-4 px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+    🌙
+  </button>
+
+  <!-- Mobile Menu Button -->
+  <button id="mobileMenuBtn" class="md:hidden ml-4 text-xl">
+    ☰
+  </button>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 text-[#1d1b19] dark:text-gray-200 px-6 py-4 flex flex-col gap-4">
+  <a href="#hero" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Home</a>
+  <a href="#guidelinesSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Guidelines</a>
+  <a href="#nearbySection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Nearby</a>
+  <a href="#expSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">Explore</a>
+  <a href="#aboutSection" class="hover:text-[#7a3e2e] dark:hover:text-orange-200 transition">About</a>
+  <a href="chatbot.html" class="text-[#0f766e] dark:text-cyan-400 hover:underline transition">Chat</a>
+</div>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+
+
+
+
+<!-- Hero sectio-->
+<section id="hero" class="relative w-full h-[60vh] sm:h-[70vh] flex items-center justify-center overflow-hidden">
+  <video autoplay muted loop playsinline
+    class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none">
+    <source src="searchvdo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+
+  <div class="relative z-10 text-center px-3 xs:px-4 w-full">
+    <h2 class="playfair text-2xl xs:text-3xl sm:text-4xl font-bold text-white drop-shadow-lg animate-on-scroll">
+      Discover India's Heritage
+    </h2>
+    <p class="mt-2 mb-7 text-gray-200 dark:text-gray-300 max-w-lg mx-auto text-base sm:text-lg animate-on-scroll">
+      Search across eras, monuments, etc...
+    </p>
+
+    <!--search Bar-->
+    <div class="relative w-full max-w-xs xs:max-w-sm sm:max-w-lg mx-auto">
+      <input id="heritage-search"
+        type="text"
+        placeholder="Search heritage sites or eras..."
+        class="w-full px-5 py-3 rounded-2xl bg-white/70 dark:bg-gray-800/70 text-gray-800 dark:text-gray-200 shadow-md backdrop-blur-lg 
+        focus:outline-none focus:ring-2 focus:ring-[#7a3e2e] placeholder-gray-500 dark:placeholder-gray-400 transition text-sm sm:text-base" />
+
+      <button id="search-btn"
+        class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#7a3e2e] hover:bg-[#5e2f21] text-white px-3 py-2 rounded-xl 
+        transition shadow-lg text-lg sm:text-xl">
+        🔍
+      </button>
+
+      <div id="suggestions-dropdown"
+        class="hidden absolute z-20 w-full bg-white rounded-md shadow-lg mt-2 max-h-52 overflow-auto text-left text-sm sm:text-base"></div>
+    </div>
+  </div>
+</section>
+
+<!--results-->
+<section id="results-section"
+  class="w-full max-w-2xl sm:max-w-4xl md:max-w-5xl mx-auto mt-8 sm:mt-10 px-2 xs:px-4 sm:px-6 md:px-8 hidden">
+  <h3 class="text-xl xs:text-2xl sm:text-3xl font-bold text-center mb-5 sm:mb-6 text-gray-800 dark:text-gray-200">
+    Search Results
+  </h3>
+  <div id="results-container"
+    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-4 sm:gap-6">
+  </div>
+</section>
+
+<script src="search.js"></script>
+
+
+
+
+
+
+<!-- Guidelines-->
+<section id="guidelinesSection" class="p-6 md:p-10 bg-[#fdf6f0] dark:bg-gray-800 animate-on-scroll rounded-xl mx-4 md:mx-16 my-8 shadow-md">
+  <h2 class="section-title text-center mb-8">Features and Guidelines</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
+    
+    <!-- Step 1 -->
+    <div class="guide-step bg-white dark:bg-gray-900 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1">
+      <img src="searchicon.png" alt="Search Icon" class="w-12 h-12 mx-auto mb-3">
+      <p class="text-[#6b645f] dark:text-gray-300">Search heritage site names, places, or stories</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="guide-step bg-white dark:bg-gray-900 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1">
+      <img src="nearbyicon.png" alt="Location Icon" class="w-12 h-12 mx-auto mb-3">
+      <p class="text-[#6b645f] dark:text-gray-300">Use the nearby finder to discover what's around</p>
+    </div>
+
+
+    <!-- Step 4 -->
+    <div class="guide-step bg-white dark:bg-gray-900 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1">
+      <img src="learnicon.png" alt="Education Icon" class="w-12 h-12 mx-auto mb-3">
+      <p class="text-[#6b645f] dark:text-gray-300">Learn about Indian history and Culture</p>
+    </div>
+
+        <!-- Step 5 -->
+    <div class="guide-step bg-white dark:bg-gray-900 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1">
+      <img src="ai.png" alt="Education Icon" class="w-12 h-12 mx-auto mb-3">
+      <p class="text-[#6b645f] dark:text-gray-300">Discover heritage facts with AI help</p>
+    </div>
+
+          <!-- Step 6 -->
+    <div class="guide-step bg-white dark:bg-gray-900 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1">
+      <img src="feedback.png" alt="Education Icon" class="w-12 h-12 mx-auto mb-3">
+      <p class="text-[#6b645f] dark:text-gray-300">Share your feedback to help us improve</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!--Welcome-->
+    <section id="welcomeSection" class="flex flex-col md:flex-row items-center gap-8 p-6 md:p-10 animate-on-scroll">
+      <img src="ttguide2.png" alt="Chibi Guide" class="w-40 h-48 rounded-full shadow-lg">
+      <div class="max-w-lg text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold playfair mb-3">Welcome Explorer!</h2>
+        <p class="text-[#6b645f] dark:text-gray-300 mb-4">
+          I’m your here to lead you through the fascinating eras of Indian heritage.
+          Ready for an adventure?
+        </p>
+        <button id="startBtn" onclick="location.href='#nearbySection'" class="px-6 py-3 bg-[#7a3e2e] text-white rounded-lg hover:bg-[#5e2f21] transition">
+          Start Exploring
+        </button>
+      </div>
+    </section>
+
+
+
+
+   
+
+<!--Nearby Section -->
+<section id="nearbySection" class="p-6 md:p-10 bg-[#fdf6f0] dark:bg-gray-800 rounded-xl mx-4 md:mx-16 my-8 shadow-md fade-slide">
+  <h2 class="section-title text-center dark:text-orange-200 mb-6">
+    Discover Heritage Around You
+  </h2>
+  <p class="text-center max-w-2xl mx-auto text-[#6b645f] dark:text-gray-300 mb-8">
+    Use our interactive nearby finder to explore heritage sites in your vicinity. Just tap the radar button and start your journey!
+  </p>
+  <div class="relative flex flex-col items-center justify-center mt-4">
+    <div class="radar-btn relative z-20 flex items-center justify-center w-28 h-28 rounded-full bg-[#7a3e2e]  shadow-xl cursor-pointer hover:scale-105 transition-transform duration-300"
+      id="nearby-btn" onclick="getPlaces()">
+   
+      <span class="absolute w-30 h-30 rounded-full border-2 border-[#7a3e2e] dark:border-orange-200 animate-ping opacity-20"></span>
+      <span class="absolute w-25 h-25 rounded-full border-2 border-[#7a3e2e] dark:border-orange-200 animate-ping delay-200 opacity-30"></span>
+      <span class="absolute w-20 h-20 rounded-full border-2 border-[#7a3e2e] dark:border-orange-200 animate-ping delay-400 opacity-40"></span>
+      <span class="relative z-10 text-white font-bold text-center">Find Nearby</span>
+    </div>
+  </div>
+
+  <!--nearby-->
+  <div id="places" class=" animate-on-scroll grid gap-6 mt-10 w-full max-w-4xl mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  </div>
+</section>
+
+<script src="nearby.js"></script>
+
+
+
+  <!--Places-->
+  <div id="places" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 w-full max-w-5xl mx-auto">
+  </div>
+</section>
+
+
+
+
+<!--Popular +state -->
+<section id="expSection" class="animate-on-scroll max-w-7xl mx-auto px-4 py-10">
+  <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Explore Indian Heritage</h3>
+
+  <!--Popular Sites -->
+  <h4 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Popular Sites of India</h4>
+  <div id="popularSites" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-10"></div>
+
+<!--State -->
+<div class="flex flex-col items-center mt-6 text-center">
+  <label for="stateSelect" class="block text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">
+    Explore Heritage by State:
+  </label>
+
+  <select 
+    id="stateSelect" 
+    class="px-4 py-2 border rounded-md w-full sm:w-80 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+  >
+    <option value="">-- Choose a State --</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="West Bengal">West Bengal</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Punjab">Punjab</option>
+  </select>
+</div>
+
+<!--State Sites -->
+<div id="stateSites" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-center"></div>
+</section>
+
+<script src="searchdist.js"></script>
+
+
+
+
+
+<!--feedback-->
+
+<section class="feedback-section">
+  <h2 class="feedback-title">User Feedbacks</h2>
+
+  <div class="feedback-container" id="feedback-container">
+    <div class="feedback-slide" id="feedback-slide">
+      <div class="feedback-card">
+        <div class="feedback-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Amazing app! Learned so much about Indian heritage." - Anika</p>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-stars">⭐⭐⭐⭐</div>
+        <p>"The nearby finder is super fun and useful!" - Rahul</p>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Beautiful design and smooth animations." - Priya</p>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-stars">⭐⭐⭐⭐</div>
+        <p>"Love the historical facts in the stories section." - Arjun</p>
+      </div>
+      <div class="feedback-card">
+        <div class="feedback-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Easy to use and very informative." - Sita</p>
+      </div>
+    </div>
+  </div>
+
+  <form id="feedback-form" class="feedback-form">
+    <input type="text" id="feedback-input" placeholder="Add your feedback here..." required />
+    <input type="text" id="user-name" placeholder="Your name" />
+    <select id="star-rating">
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="feedback-summary" class="animate-on-scroll  mx-5 md:mx-50 my-10" >
+    <p class="section-title text-center dark:text-white text-bold text-[26px] ">Average Rating: <span id="avgRating">0 ⭐</span></p>
+  </div>
+</section>
+
+
+
+<script src="feedback.js" defer></script>
+
+ <!-- About us-->
+    <section id="aboutSection" class="p-6 animate-on-scroll bg-[#fdf6f0] dark:bg-gray-800 rounded-xl mx-4 md:mx-16 my-6">
+      <h2 class="section-title text-center dark:text-orange-200">About Us</h2>
+      <p class="max-w-3xl mx-auto text-center text-[#6b645f] dark:text-gray-300">
+        Histobi is a digital platform dedicated to showcasing India’s rich heritage. It lets users explore historical monuments, temples, forts, and museums.
+Our mission is to make heritage exploration engaging, accessible, and visually captivating, helping users discover the beauty and significance of India’s cultural landmarks, all from the comfort of their screens.
+      </p>
+    </section>
+
+
+
+<!--footer -->
+<footer class="mt-auto flex flex-col sm:flex-row gap-2 sm:gap-4 items-center justify-center p-5 text-[#6b645f] dark:text-gray-400 border-t border-[#efe8df] dark:border-gray-700 text-sm">
+  <span>© <span id="year"></span> Histobi</span>
+  <span class="opacity-40 hidden sm:inline">•</span>
+  <a href="chatbot.html" id="chatBtn" class="text-[#0f766e] hover:underline dark:text-cyan-400">Chat with Histobi</a>
+  <span class="opacity-40 hidden sm:inline">•</span>
+  <a href="mailto:sdharshini1812@gmail.com" class="text-[#0f766e] hover:underline dark:text-cyan-400">Contact Us</a>
+</footer>
+
+
+
+   <script src="script.js"></script>
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+ 
+
+
+    
+  </script>
+</body>
+</html>
+
+
